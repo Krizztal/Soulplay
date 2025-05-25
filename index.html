@@ -14,13 +14,38 @@
       color: #2c2c2c;
       text-align: center;
       overflow-x: hidden;
+      position: relative;
     }
+
     h1 {
       font-size: 3em;
       margin-bottom: 0.2em;
       letter-spacing: 1px;
       color: #333;
-      text-shadow: 0 0 8px rgba(255 255 255 / 0.8);
+      text-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
+    }
+
+    .intro-box {
+      position: absolute;
+      width: 280px;
+      padding: 1.2em;
+      background: rgba(255, 255, 255, 0.5);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+      font-size: 0.95em;
+      line-height: 1.4;
+      animation: float 8s ease-in-out infinite;
+    }
+
+    .intro-left {
+      top: 30px;
+      left: 30px;
+    }
+
+    .intro-right {
+      top: 30px;
+      right: 30px;
+      animation-delay: 4s;
     }
 
     .container {
@@ -28,57 +53,43 @@
       flex-wrap: wrap;
       justify-content: center;
       gap: 2em;
-      margin-top: 2em;
+      margin-top: 300px;
     }
 
     .circle {
-      flex: 1 1 250px;
-      min-width: 250px;
-      max-width: 320px;
-      background: rgba(200, 200, 200, 0.25);
+      flex: 1 1 220px;
+      min-width: 220px;
+      max-width: 260px;
+      background: rgba(200, 200, 200, 0.4);
       border-radius: 50%;
-      padding: 2.5em 2em;
-      box-sizing: border-box;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      color: #222;
-      font-size: 1.1em;
-      line-height: 1.5;
+      padding: 2em;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      text-align: center;
       display: flex;
       flex-direction: column;
       justify-content: center;
-      text-align: left;
-      animation: float 6s ease-in-out infinite;
-      transition: transform 0.3s ease;
+      align-items: center;
+      font-size: 1em;
+      line-height: 1.5;
+      animation: float 10s ease-in-out infinite;
     }
 
-    @keyframes float {
-      0% { transform: translateY(0px); }
-      50% { transform: translateY(-15px); }
-      100% { transform: translateY(0px); }
-    }
-
-    .circle0a {
-      background: rgba(255, 255, 255, 0.25);
-    }
-    .circle0b {
-      background: rgba(240, 255, 255, 0.2);
-    }
     .circle1 {
-      background: rgba(195, 178, 122, 0.4); /* vergrijsd okergeel */
+      background: rgba(195, 178, 122, 0.6);
     }
     .circle2 {
-      background: rgba(176, 167, 118, 0.35);
+      background: rgba(176, 167, 118, 0.55);
     }
     .circle3 {
-      background: rgba(142, 156, 132, 0.3);
+      background: rgba(142, 156, 132, 0.5);
     }
     .circle4 {
-      background: rgba(121, 147, 141, 0.25); /* vergrijsd teal */
+      background: rgba(121, 147, 141, 0.45);
     }
 
     .circle h2 {
       margin-top: 0;
-      margin-bottom: 0.5em;
+      margin-bottom: 0.4em;
       font-weight: 700;
       color: #2a2a2a;
     }
@@ -88,7 +99,16 @@
       font-size: 0.9em;
       color: #666;
       text-align: center;
-      text-shadow: 0 0 5px rgba(255 255 255 / 0.7);
+      text-shadow: 0 0 5px rgba(255, 255, 255, 0.7);
+    }
+
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0px);
+      }
+      50% {
+        transform: translateY(-8px);
+      }
     }
 
     @media (max-width: 600px) {
@@ -99,48 +119,43 @@
       .circle {
         max-width: 100%;
       }
+      .intro-box {
+        position: static;
+        margin: 1em auto;
+      }
     }
   </style>
 </head>
 <body>
   <h1>SoulPlay</h1>
 
+  <div class="intro-box intro-left">
+    SoulPlay is een interactief samenkomen met verschillende zachte, veilige ruimten, die elkaar overlappen in tijd en ruimte zonder te storen. Contact blijft maximaal en overlast minimaal. Het doel is spelenderwijs tot inzichten, oplossingen en verdieping te komen.
+  </div>
+
+  <div class="intro-box intro-right">
+    Je beweegt vrij, gaat waar je wilt, zonder vaste pauzes. Zo ontstaat een dynamische en veilige omgeving, met ruimte voor diepe gesprekken én voor wie graag beweegt en ontlaadt.
+  </div>
+
   <div class="container">
-    <div class="circle circle0a">
-      <p>
-        SoulPlay is het interactief samenkomen op een locatie met verschillende zachte, veilige ruimten, die elkaar overlappen qua tijd en ruimte zonder te storen. Contact blijft maximaal en overlast minimaal. Het doel is spelenderwijs tot inzichten, oplossingen en verdieping te komen, ieder op zijn eigen wijze.
-      </p>
-    </div>
-    <div class="circle circle0b">
-      <p>
-        Je beweegt vrij, gaat waar je wilt, zonder vaste pauzes. Zo ontstaat er een veilige en dynamische omgeving, waar er ruimte is voor iedereen. Een inspirerende zetting voor degenen met langere aandacht spanne en behoefte aan verdere verdieping van thema’s en bewegingsvrijheid voor zij die juist snel willen switchen en ontladen.
-      </p>
-    </div>
     <div class="circle circle1">
       <h2>Vrije speelruimte</h2>
-      <p>
-        In de vrije speelruimte kun je experimenteren met spelmateriaal en elkaar. Alles mag bewegen en jouw ziel kan vrij spelen.
-      </p>
+      <p>Hier kun je experimenteren met spelmateriaal en elkaar. Alles mag bewegen. Je ziel mag vrij spelen.</p>
     </div>
     <div class="circle circle2">
       <h2>Kringruimte</h2>
-      <p>
-        De kringruimte is waar georganiseerde gesprekken plaatsvinden, geleid door een kringleider die het proces begeleidt.
-      </p>
+      <p>Georganiseerde gesprekken met begeleiding door een kringleider. Samen verdiepen we het thema.</p>
     </div>
     <div class="circle circle3">
       <h2>Één-op-één ruimte</h2>
-      <p>
-        In de zachte één-op-één ruimte vinden mensen die behoefte hebben aan persoonlijke aandacht, luisteren en meedenken, een veilige plek.
-      </p>
+      <p>Voor wie behoefte heeft aan persoonlijke aandacht, luisteren en meedenken in een zachte setting.</p>
     </div>
     <div class="circle circle4">
       <h2>Opstellingen</h2>
-      <p>
-        En in de ruimte voor opstellingen ontstaan inzichten en beweging in familie- en energiesystemen.
-      </p>
+      <p>In deze ruimte ontstaan inzichten en beweging in familie- en energiesystemen via opstellingswerk.</p>
     </div>
   </div>
+
   <footer>&copy; 2025 SoulPlay – A Soulplay Creation</footer>
 </body>
 </html>
