@@ -82,3 +82,84 @@
       flex-direction: column;
       justify-content: center;
       text-align: left;
+      transition: background 0.3s ease;
+    }
+
+    .circle1 {
+      background: rgba(195, 178, 122, 0.45); /* vergrijsd okergeel */
+    }
+    .circle2 {
+      background: rgba(176, 167, 118, 0.40);
+    }
+    .circle3 {
+      background: rgba(142, 156, 132, 0.35);
+    }
+    .circle4 {
+      background: rgba(121, 147, 141, 0.30); /* vergrijsd teal */
+    }
+
+    .circle h2 {
+      margin-top: 0;
+      margin-bottom: 0.5em;
+      font-weight: 700;
+      color: #2a2a2a;
+    }
+
+    footer {
+      margin-top: 3em;
+      font-size: 0.9em;
+      color: #666;
+      text-align: center;
+      text-shadow: 0 0 5px rgba(255 255 255 / 0.7);
+      position: relative;
+      z-index: 1;
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        flex-direction: column;
+        gap: 1.5em;
+      }
+      .circle {
+        max-width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>SoulPlay</h1>
+
+  <div class="intro">
+    <p>SoulPlay is ontstaan als nieuw en fris alternatief voor de traditionele kringgesprekken.</p>
+    <p>Het is een interactief samenkomen in verschillende zachte, veilige ruimten, die elkaar overlappen zonder dat ze storen.</p>
+    <p>Zo blijft contact mogelijk zonder overlast.</p>
+    <p>Het doel is spelenderwijs tot inzichten, oplossingen en verdieping te komen, ieder op zijn eigen wijze.</p>
+
+    <p>Al deze ruimtes spelen tegelijkertijd. Je beweegt vrij, gaat waar je wilt, zonder vaste pauzes.</p>
+    <p>Zo ontstaat er een veilige en dynamische omgeving, waar er ruimte is voor iedereen.</p>
+    <p>Een inspirerende zetting voor degenen met langere aandachtsspanne en behoefte aan verdere verdieping van thema’s,</p>
+    <p>en bewegingsvrijheid voor zij die juist snel willen switchen en ontladen.</p>
+  </div>
+
+  <div class="container">
+    <div class="circle circle1">
+      <h2>Vrije speelruimte</h2>
+      <p>In de vrije speelruimte kun je experimenteren met spelmateriaal en elkaar. Alles mag bewegen en jouw ziel kan vrij spelen.</p>
+    </div>
+    <div class="circle circle2">
+      <h2>Kringruimte</h2>
+      <p>De kringruimte is waar georganiseerde gesprekken plaatsvinden, geleid door een kringleider die het proces begeleidt.</p>
+    </div>
+    <div class="circle circle3">
+      <h2>Één-op-één ruimte</h2>
+      <p>In de zachte één-op-één ruimte vinden mensen die behoefte hebben aan persoonlijke aandacht, luisteren en meedenken, een veilige plek.</p>
+    </div>
+    <div class="circle circle4">
+      <h2>Opstellingen</h2>
+      <p>En in de ruimte voor opstellingen ontstaan inzichten en beweging in familie- en energiesystemen.</p>
+    </div>
+  </div>
+
+  <footer>&copy; 2025 SoulPlay – A Soulplay Creation</footer>
+</body>
+</html>
