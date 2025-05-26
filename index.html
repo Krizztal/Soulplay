@@ -2,175 +2,59 @@
 <html lang="nl">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>SoulPlay</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Unicircle</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background: url('Soulplay.jpg') no-repeat center center fixed;
+      font-family: 'Georgia', serif;
+      background: 
+        linear-gradient(145deg, rgba(243,240,235,0.8), rgba(232,244,241,0.8)),
+        url('Soulplay.jpg') no-repeat center center fixed;
       background-size: cover;
-      margin: 0;
-      padding: 3em 2em;
       color: #2c2c2c;
+      padding: 4em 2em;
       text-align: center;
-      overflow-x: hidden;
-      position: relative;
     }
-
     h1 {
-      font-size: 3em;
-      margin-bottom: 0.2em;
+      font-size: 3.2em;
+      margin-bottom: 0.3em;
       letter-spacing: 1px;
-      color: #333;
-      text-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
     }
-
-    /* Intro-kubussen */
-
-    .intro-cube {
-      position: absolute;
-      width: 260px;
-      height: 260px;
-      background-image: url('kubus.png');
-      background-size: cover;
-      background-repeat: no-repeat;
-      animation: float 8s ease-in-out infinite;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 1em;
-      box-sizing: border-box;
+    p {
+      font-size: 1.25em;
+      max-width: 720px;
+      margin: 0 auto 1.5em;
+      line-height: 1.6;
     }
-
-    .text-inside-cube {
-      background-color: rgba(255, 255, 255, 0.65);
-      padding: 1em;
-      border-radius: 6px;
-      font-size: 0.9em;
-      line-height: 1.4;
-      color: #2c2c2c;
-      text-align: center;
-      box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+    .symbol {
+      font-size: 3em;
+      margin-top: 1em;
     }
-
-    .intro-left {
-      top: 30px;
-      left: 30px;
-    }
-
-    .intro-right {
-      top: 30px;
-      right: 30px;
-      animation-delay: 4s;
-    }
-
-    /* Ruimteballonnen */
-
-    .container {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 2em;
-      margin-top: 320px;
-    }
-
-    .circle {
-      flex: 1 1 220px;
-      min-width: 220px;
-      max-width: 260px;
-      background: rgba(200, 200, 200, 0.4);
-      border-radius: 50% / 60%; /* verticaal ovaal */
-      padding: 2em;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-      text-align: center;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      font-size: 1em;
-      line-height: 1.5;
-      animation: float 10s ease-in-out infinite;
-    }
-
-    .circle1 { background: rgba(195, 178, 122, 0.6); }
-    .circle2 { background: rgba(176, 167, 118, 0.55); }
-    .circle3 { background: rgba(142, 156, 132, 0.5); }
-    .circle4 { background: rgba(121, 147, 141, 0.45); }
-
-    .circle h2 {
-      margin: 0 0 0.4em;
-      font-weight: 700;
-      color: #2a2a2a;
-    }
-
     footer {
       margin-top: 3em;
       font-size: 0.9em;
       color: #666;
-      text-align: center;
-      text-shadow: 0 0 5px rgba(255, 255, 255, 0.7);
-    }
-
-    @keyframes float {
-      0%, 100% {
-        transform: translateY(0px);
-      }
-      50% {
-        transform: translateY(-8px);
-      }
-    }
-
-    @media (max-width: 600px) {
-      .container {
-        flex-direction: column;
-        gap: 1.5em;
-      }
-      .circle {
-        max-width: 100%;
-      }
-      .intro-cube {
-        position: static;
-        margin: 1em auto;
-      }
     }
   </style>
 </head>
 <body>
-  <h1>SoulPlay</h1>
+  <h1>Unicircle</h1>
+  <p>Geen kring. Geen regels. Geen pauzes.<br/>
+  Wel een ruimte waar jouw ziel mag spelen.</p>
 
-  <!-- Inleidende tekst in kubussen -->
-  <div class="intro-cube intro-left">
-    <div class="text-inside-cube">
-      SoulPlay is een samenspel van zachte ruimtes die elkaar overlappen. Contact blijft maximaal, overlast minimaal.
-    </div>
-  </div>
+  <p>Een levende verzameling van zachte hoeken:<br/>
+  🦉 Waar je vragen mag fluisteren.<br/>
+  🐾 Waar je troost vindt zonder woorden.<br/>
+  ✨ Waar alles tegelijk mag bewegen, zonder dat jij de draad kwijtraakt.</p>
 
-  <div class="intro-cube intro-right">
-    <div class="text-inside-cube">
-      Je beweegt vrij, zonder vaste pauzes. Zo ontstaat een veilige flow vol ruimte voor verdieping en ontlading.
-    </div>
-  </div>
+  <p><em>Groepsgesprekken, één-op-één ont-moetingen, mini-opstellingen, energievelden, stilte, dans –<br/>
+  niet gepland, maar aanwezig.<br/>
+  Niet voor vrouwen. Niet voor mannen. Voor wie durft te voelen.</em></p>
 
-  <!-- Ruimteballonnen -->
-  <div class="container">
-    <div class="circle circle1">
-      <h2>Vrije speelruimte</h2>
-      <p>Spelmateriaal, vrijheid, improvisatie en vrije uitwisseling van energie en ideeën.</p>
-    </div>
-    <div class="circle circle2">
-      <h2>Kringruimte</h2>
-      <p>Geleide gesprekken rond een thema. Veilig verdiepen in elkaars ervaring en wijsheid.</p>
-    </div>
-    <div class="circle circle3">
-      <h2>Één-op-één</h2>
-      <p>Persoonlijke aandacht, spiegelen, meedenken, samen doorvoelen in een zachte setting.</p>
-    </div>
-    <div class="circle circle4">
-      <h2>Opstellingen</h2>
-      <p>Inzicht via systemisch werk. Patronen zichtbaar maken en beweging brengen in het veld.</p>
-    </div>
-  </div>
+  <div class="symbol">∞</div>
 
-  <footer>&copy; 2025 SoulPlay – A Soulplay Creation</footer>
+  <footer>
+    &copy; 2025 Unicircle – A Soulplay Creation
+  </footer>
 </body>
 </html>
