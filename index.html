@@ -10,7 +10,7 @@
       background: url('Soulplay.jpg') no-repeat center center fixed;
       background-size: cover;
       margin: 0;
-      padding: 2em;
+      padding: 3em 2em;
       color: #2c2c2c;
       text-align: center;
       overflow-x: hidden;
@@ -25,27 +25,32 @@
       text-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
     }
 
-    .intro-box {
+    /* Intro-kubussen */
+
+    .intro-cube {
       position: absolute;
-      width: 280px;
-      height: 280px;
-      padding: 1em;
-      background: rgba(255, 255, 255, 0.6);
-      background-image: url('https://i.imgur.com/YoHc8P8.png'); /* transparante 3D kubus */
+      width: 260px;
+      height: 260px;
+      background-image: url('kubus.png');
       background-size: cover;
       background-repeat: no-repeat;
-      background-position: center;
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
-      font-size: 0.95em;
-      line-height: 1.4;
       animation: float 8s ease-in-out infinite;
-      backdrop-filter: blur(2px);
       display: flex;
-      justify-content: center;
       align-items: center;
+      justify-content: center;
+      padding: 1em;
+      box-sizing: border-box;
+    }
+
+    .text-inside-cube {
+      background-color: rgba(255, 255, 255, 0.65);
+      padding: 1em;
+      border-radius: 6px;
+      font-size: 0.9em;
+      line-height: 1.4;
+      color: #2c2c2c;
       text-align: center;
-      color: #222;
-      font-weight: 500;
+      box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
     }
 
     .intro-left {
@@ -59,12 +64,14 @@
       animation-delay: 4s;
     }
 
+    /* Ruimteballonnen */
+
     .container {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
       gap: 2em;
-      margin-top: 350px;
+      margin-top: 320px;
     }
 
     .circle {
@@ -72,7 +79,7 @@
       min-width: 220px;
       max-width: 260px;
       background: rgba(200, 200, 200, 0.4);
-      border-radius: 50% / 60%; /* ovale vorm: breder onder/boven */
+      border-radius: 50% / 60%; /* verticaal ovaal */
       padding: 2em;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
       text-align: center;
@@ -80,27 +87,18 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      font-size: 0.95em;
-      line-height: 1.4;
+      font-size: 1em;
+      line-height: 1.5;
       animation: float 10s ease-in-out infinite;
     }
 
-    .circle1 {
-      background: rgba(195, 178, 122, 0.6);
-    }
-    .circle2 {
-      background: rgba(176, 167, 118, 0.55);
-    }
-    .circle3 {
-      background: rgba(142, 156, 132, 0.5);
-    }
-    .circle4 {
-      background: rgba(121, 147, 141, 0.45);
-    }
+    .circle1 { background: rgba(195, 178, 122, 0.6); }
+    .circle2 { background: rgba(176, 167, 118, 0.55); }
+    .circle3 { background: rgba(142, 156, 132, 0.5); }
+    .circle4 { background: rgba(121, 147, 141, 0.45); }
 
     .circle h2 {
-      margin-top: 0;
-      margin-bottom: 0.4em;
+      margin: 0 0 0.4em;
       font-weight: 700;
       color: #2a2a2a;
     }
@@ -118,7 +116,7 @@
         transform: translateY(0px);
       }
       50% {
-        transform: translateY(-6px);
+        transform: translateY(-8px);
       }
     }
 
@@ -127,13 +125,10 @@
         flex-direction: column;
         gap: 1.5em;
       }
-
       .circle {
         max-width: 100%;
-        border-radius: 50% / 70%;
       }
-
-      .intro-box {
+      .intro-cube {
         position: static;
         margin: 1em auto;
       }
@@ -143,30 +138,36 @@
 <body>
   <h1>SoulPlay</h1>
 
-  <div class="intro-box intro-left">
-    SoulPlay is een speelse bijeenkomst met zachte ruimten. Ze overlappen zonder te botsen. Contact blijft hoog, overlast laag.
+  <!-- Inleidende tekst in kubussen -->
+  <div class="intro-cube intro-left">
+    <div class="text-inside-cube">
+      SoulPlay is een samenspel van zachte ruimtes die elkaar overlappen. Contact blijft maximaal, overlast minimaal.
+    </div>
   </div>
 
-  <div class="intro-box intro-right">
-    Je beweegt vrij, zonder pauzes. Dat schept veiligheid, ruimte én dynamiek.
+  <div class="intro-cube intro-right">
+    <div class="text-inside-cube">
+      Je beweegt vrij, zonder vaste pauzes. Zo ontstaat een veilige flow vol ruimte voor verdieping en ontlading.
+    </div>
   </div>
 
+  <!-- Ruimteballonnen -->
   <div class="container">
     <div class="circle circle1">
       <h2>Vrije speelruimte</h2>
-      <p>Je experimenteert met spelmateriaal, beweging en contact. Alles mag. Jouw ziel speelt vrij.</p>
+      <p>Spelmateriaal, vrijheid, improvisatie en vrije uitwisseling van energie en ideeën.</p>
     </div>
     <div class="circle circle2">
       <h2>Kringruimte</h2>
-      <p>Geleide gesprekken in kleine kring, rondom een thema dat je raakt.</p>
+      <p>Geleide gesprekken rond een thema. Veilig verdiepen in elkaars ervaring en wijsheid.</p>
     </div>
     <div class="circle circle3">
       <h2>Één-op-één</h2>
-      <p>Voor wie persoonlijke aandacht wil. Luisterend, afstemmend, zacht.</p>
+      <p>Persoonlijke aandacht, spiegelen, meedenken, samen doorvoelen in een zachte setting.</p>
     </div>
     <div class="circle circle4">
       <h2>Opstellingen</h2>
-      <p>Inzicht en beweging in systemen via representaties en voelwerk.</p>
+      <p>Inzicht via systemisch werk. Patronen zichtbaar maken en beweging brengen in het veld.</p>
     </div>
   </div>
 
