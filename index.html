@@ -2,7 +2,7 @@
 <html lang="nl">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>SoulPlay</title>
   <style>
     body {
@@ -12,6 +12,7 @@
       background: url('Soulplay.jpg') no-repeat center center fixed;
       background-size: cover;
       color: #222;
+      overflow-x: hidden;
     }
 
     h1 {
@@ -54,6 +55,61 @@
       max-width: 80%;
     }
 
+    .circle-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2em;
+    }
+
+    .circle {
+      width: 240px;
+      height: 280px;
+      background: rgba(255, 255, 255, 0.4);
+      border-radius: 50% / 45%;
+      padding: 1.5em;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      animation: float var(--duration) ease-in-out infinite alternate;
+      font-size: 1em;
+      line-height: 1.4;
+      backdrop-filter: blur(3px);
+    }
+
+    .circle h2 {
+      margin-top: 0;
+      margin-bottom: 0.4em;
+      font-weight: bold;
+      color: #2a2a2a;
+    }
+
+    .circle1 {
+      background-color: rgba(195, 178, 122, 0.6);
+      --duration: 7s;
+    }
+    .circle2 {
+      background-color: rgba(176, 167, 118, 0.55);
+      --duration: 8.5s;
+    }
+    .circle3 {
+      background-color: rgba(142, 156, 132, 0.5);
+      --duration: 6.5s;
+    }
+    .circle4 {
+      background-color: rgba(121, 147, 141, 0.45);
+      --duration: 9s;
+    }
+
+    @keyframes float {
+      0%   { transform: translateY(0) translateX(0); }
+      50%  { transform: translateY(-10px) translateX(5px); }
+      100% { transform: translateY(0) translateX(0); }
+    }
+
     footer {
       text-align: center;
       margin-top: 4em;
@@ -62,10 +118,21 @@
       text-shadow: 0 0 5px rgba(255,255,255,0.6);
     }
 
-    @media (max-width: 700px) {
+    @media (max-width: 768px) {
       .intro-container {
         flex-direction: column;
         align-items: center;
+      }
+
+      .circle-container {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .circle {
+        width: 90%;
+        height: auto;
+        border-radius: 40% / 50%;
       }
     }
   </style>
@@ -74,6 +141,7 @@
 
   <h1>SoulPlay</h1>
 
+  <!-- Inleidende kubusvakken -->
   <div class="intro-container">
     <div class="cube-box">
       <div class="cube-text">
@@ -84,6 +152,26 @@
       <div class="cube-text">
         Je beweegt vrij, zonder vaste pauzes. Zo ontstaat een veilige flow vol ruimte voor verdieping en ontlading.
       </div>
+    </div>
+  </div>
+
+  <!-- Vier ruimteballonnen -->
+  <div class="circle-container">
+    <div class="circle circle1">
+      <h2>Vrije speelruimte</h2>
+      <p>Experimenteer met spelmateriaal en elkaar. Alles mag bewegen. Je ziel mag vrij spelen.</p>
+    </div>
+    <div class="circle circle2">
+      <h2>Kringruimte</h2>
+      <p>Georganiseerde gesprekken met begeleiding. Samen verdiepen we het thema op een zachte manier.</p>
+    </div>
+    <div class="circle circle3">
+      <h2>Één-op-één</h2>
+      <p>Voor wie persoonlijke aandacht zoekt. Luisteren, spiegelen, voelen en verzachten in kleine setting.</p>
+    </div>
+    <div class="circle circle4">
+      <h2>Opstellingen</h2>
+      <p>Inzicht en beweging in familie- en energiesystemen via opstellingswerk en systemisch voelen.</p>
     </div>
   </div>
 
