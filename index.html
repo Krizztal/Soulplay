@@ -2,180 +2,165 @@
 <html lang="nl">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>SoulPlay</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SoulPlay – Magische Planeten</title>
   <style>
     body {
-      font-family: 'Segoe UI', sans-serif;
       margin: 0;
-      padding: 2em;
+      padding: 0;
       background: url('Soulplay.jpg') no-repeat center center fixed;
       background-size: cover;
-      color: #222;
-      overflow-x: hidden;
+      font-family: 'Segoe UI', sans-serif;
+      overflow: hidden;
+      color: #f0f0f0;
     }
 
     h1 {
+      position: absolute;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
       font-size: 3em;
-      text-align: center;
-      margin-bottom: 2em;
-      color: #333;
-      text-shadow: 0 0 6px rgba(255, 255, 255, 0.8);
+      text-shadow: 0 0 12px rgba(255, 255, 255, 0.8);
+      z-index: 10;
     }
 
-    .intro-container {
-      display: flex;
-      justify-content: space-evenly;
-      flex-wrap: wrap;
-      gap: 2em;
-      margin-bottom: 4em;
-    }
-
-    .cube-box {
-      background-image: url('kubus.png');
-      background-size: contain;
-      background-repeat: no-repeat;
-      background-position: center;
+    .planet {
       width: 300px;
       height: 300px;
+      background-image: url('kubus.png');
+      background-size: cover;
+      background-position: center;
+      color: #fff;
+      padding: 1.2em;
+      box-sizing: border-box;
+      position: absolute;
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 1em;
+      text-align: center;
+      font-size: 1em;
+      line-height: 1.4;
+      animation: breathe 10s ease-in-out infinite alternate, drift 20s linear infinite;
     }
 
-    .cube-text {
-      background-color: rgba(255, 255, 255, 0.75);
-      padding: 1em;
-      border-radius: 8px;
-      box-shadow: 0 0 8px rgba(0,0,0,0.1);
-      font-size: 0.95em;
-      line-height: 1.5;
-      text-align: center;
-      max-width: 80%;
+    .planet.left {
+      top: 60px;
+      left: 40px;
+      animation-delay: 0s, 0s;
+    }
+
+    .planet.right {
+      top: 60px;
+      right: 40px;
+      animation-delay: 2s, 5s;
     }
 
     .circle-container {
+      position: absolute;
+      bottom: 40px;
+      left: 50%;
+      transform: translateX(-50%);
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 2em;
+      gap: 3em;
+      width: 90%;
+      max-width: 1100px;
     }
 
     .circle {
-      width: 240px;
-      height: 280px;
-      background: rgba(255, 255, 255, 0.4);
+      width: 180px;
+      height: 220px;
+      background: rgba(255, 255, 255, 0.1);
       border-radius: 50% / 45%;
-      padding: 1.5em;
-      text-align: center;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      backdrop-filter: blur(5px);
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      animation: float var(--duration) ease-in-out infinite alternate;
-      font-size: 1em;
+      padding: 1em;
+      box-shadow: 0 0 12px rgba(0,0,0,0.3);
+      text-align: center;
+      font-size: 0.95em;
       line-height: 1.4;
-      backdrop-filter: blur(3px);
+      animation: breathe 8s ease-in-out infinite alternate, float 14s ease-in-out infinite;
     }
 
     .circle h2 {
       margin-top: 0;
-      margin-bottom: 0.4em;
-      font-weight: bold;
-      color: #2a2a2a;
+      font-size: 1.1em;
+      color: #fff;
     }
 
-    .circle1 {
-      background-color: rgba(195, 178, 122, 0.6);
-      --duration: 7s;
-    }
-    .circle2 {
-      background-color: rgba(176, 167, 118, 0.55);
-      --duration: 8.5s;
-    }
-    .circle3 {
-      background-color: rgba(142, 156, 132, 0.5);
-      --duration: 6.5s;
-    }
-    .circle4 {
-      background-color: rgba(121, 147, 141, 0.45);
-      --duration: 9s;
+    .circle1 { background-color: rgba(243, 214, 105, 0.2); animation-delay: 0s, 2s; }
+    .circle2 { background-color: rgba(155, 225, 190, 0.2); animation-delay: 1s, 4s; }
+    .circle3 { background-color: rgba(200, 180, 255, 0.2); animation-delay: 2s, 6s; }
+    .circle4 { background-color: rgba(255, 180, 180, 0.2); animation-delay: 3s, 8s; }
+
+    @keyframes breathe {
+      0% { transform: scale(1); }
+      100% { transform: scale(1.08); }
     }
 
     @keyframes float {
-      0%   { transform: translateY(0) translateX(0); }
-      50%  { transform: translateY(-10px) translateX(5px); }
-      100% { transform: translateY(0) translateX(0); }
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
     }
 
-    footer {
-      text-align: center;
-      margin-top: 4em;
-      font-size: 0.9em;
-      color: #444;
-      text-shadow: 0 0 5px rgba(255,255,255,0.6);
+    @keyframes drift {
+      0% { transform: translateY(0) rotate(0deg); }
+      100% { transform: translateY(-15px) rotate(360deg); }
     }
 
     @media (max-width: 768px) {
-      .intro-container {
-        flex-direction: column;
-        align-items: center;
+      .planet {
+        width: 90vw;
+        height: 200px;
+        font-size: 0.9em;
       }
 
       .circle-container {
         flex-direction: column;
         align-items: center;
+        gap: 2em;
       }
 
       .circle {
-        width: 90%;
-        height: auto;
-        border-radius: 40% / 50%;
+        width: 70vw;
+        height: 180px;
       }
     }
   </style>
 </head>
 <body>
-
   <h1>SoulPlay</h1>
 
-  <!-- Inleidende kubusvakken -->
-  <div class="intro-container">
-    <div class="cube-box">
-      <div class="cube-text">
-        SoulPlay is een samenspel van zachte ruimtes die elkaar overlappen. Contact blijft maximaal, overlast minimaal.
-      </div>
-    </div>
-    <div class="cube-box">
-      <div class="cube-text">
-        Je beweegt vrij, zonder vaste pauzes. Zo ontstaat een veilige flow vol ruimte voor verdieping en ontlading.
-      </div>
-    </div>
+  <div class="planet left">
+    SoulPlay is een interactief samenzijn in zachte, overlappende ruimten. Contact blijft maximaal, overlast minimaal.
   </div>
 
-  <!-- Vier ruimteballonnen -->
+  <div class="planet right">
+    Je beweegt vrij tussen de sferen. Sommigen verdiepen, anderen ontladen. Alles mag. Jij bent welkom.
+  </div>
+
   <div class="circle-container">
     <div class="circle circle1">
       <h2>Vrije speelruimte</h2>
-      <p>Experimenteer met spelmateriaal en elkaar. Alles mag bewegen. Je ziel mag vrij spelen.</p>
+      <p>Experimenteren, bewegen en spelen met wie en wat je wil.</p>
     </div>
     <div class="circle circle2">
       <h2>Kringruimte</h2>
-      <p>Georganiseerde gesprekken met begeleiding. Samen verdiepen we het thema op een zachte manier.</p>
+      <p>Diepe themagesprekken in kleine groepjes met begeleiding.</p>
     </div>
     <div class="circle circle3">
       <h2>Één-op-één</h2>
-      <p>Voor wie persoonlijke aandacht zoekt. Luisteren, spiegelen, voelen en verzachten in kleine setting.</p>
+      <p>Voor persoonlijke aandacht, spiegels, vragen en zachtheid.</p>
     </div>
     <div class="circle circle4">
       <h2>Opstellingen</h2>
-      <p>Inzicht en beweging in familie- en energiesystemen via opstellingswerk en systemisch voelen.</p>
+      <p>Systeemwerk in een veilige bedding. Familie, thema’s, energie.</p>
     </div>
   </div>
-
-  <footer>&copy; 2025 SoulPlay – A Soulplay Creation</footer>
-
 </body>
 </html>
